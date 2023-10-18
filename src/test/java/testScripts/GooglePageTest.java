@@ -1,5 +1,7 @@
 package testScripts;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -15,13 +17,15 @@ public class GooglePageTest {
 		
 		driver.navigate().to("https://www.google.com");
 		WebElement search = driver.findElement(By.id("APjFqb"));
-		search.sendKeys("Java Tutorial");
+		search.sendKeys("Selenium Tutorial");
 		search.sendKeys(Keys.ENTER);
 		
-		System.out.println("Page Title - " + driver.getTitle());
+		List <WebElement> searchOption = driver.findElements(By.xpath("//ul[@class='G43f7e'][1]//li//div[@class='wM6W7d']"));
+		
+//		System.out.println("Page Title - " + driver.getTitle());
 //		System.out.println("Page Current URL - " + driver.getCurrentUrl());
 		
-		driver.navigate().back();
+//		driver.navigate().back();
 
 	}
 }
