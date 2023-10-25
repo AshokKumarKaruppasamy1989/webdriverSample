@@ -1,5 +1,6 @@
 package testScripts;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,24 +15,27 @@ public class GooglePageTest {
 		WebDriver driver = new ChromeDriver();
 
 //		driver.get("https://www.google.com");
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		driver.navigate().to("https://www.google.com");
 		WebElement search = driver.findElement(By.id("APjFqb"));
 		search.sendKeys("Selenium Tutorial");
-		search.submit();
+//		search.submit();
 //		search.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 
-		/*
-		 * List<WebElement> searchOption = driver
-		 * .findElements(By.xpath("//ul[@class='G43f7e'][1]//li//div[@class='wM6W7d']"))
-		 * ;
-		 * 
-		 * System.out.println("Number of items..." + searchOption.size()); for
-		 * (WebElement option : searchOption) { System.out.println(option.getText()); if
-		 * (option.getText().equalsIgnoreCase("selenium tutorial pdf")) {
-		 * option.click(); break; } }
-		 */
+		List<WebElement> searchOption = driver
+				.findElements(By.xpath("//ul[@class='G43f7e'][1]//li//div[@class='wM6W7d']"));
+
+		System.out.println("Number of items..." + searchOption.size());
+		for (WebElement option : searchOption) {
+			System.out.println(option.getText());
+			if (option.getText().equalsIgnoreCase("selenium tutorial pdf")) {
+				option.click();
+				break;
+			}
+		}
 
 //		System.out.println("Page Title - " + driver.getTitle());
 //		System.out.println("Page Current URL - " + driver.getCurrentUrl());
