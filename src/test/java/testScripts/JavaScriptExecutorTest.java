@@ -21,7 +21,14 @@ public class JavaScriptExecutorTest {
 		WebElement input = (WebElement) jse.executeScript("return document.getElementsByName('search')[0]");
 		input.sendKeys("samsung");
 		
+		// To scroll down to the bottom of the web page
 		jse.executeScript("window.scrollBy(10,document.body.scrollHeight)");
+		
+		// To scroll down the web page by pixel
+		jse.executeScript("wondow.scrollBy(0,500");
+		
+		// To scroll down the web page by the visibility of the element
+		jse.executeScript("arguments[0].scrollIntoView();", input);
 
 	}
 }

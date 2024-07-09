@@ -51,7 +51,7 @@ public class ImplicitandExplicitWaitTest {
 //		
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 //		
-////		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Data loaded with AJAX get request.']")));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[text()='Data loaded with AJAX get request.']")));
 //		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("div#content")), "Data loaded with AJAX get request."));
 //		
 //		System.out.println(driver.findElement(By.xpath("//p[text()='Data loaded with AJAX get request.']")).getText());

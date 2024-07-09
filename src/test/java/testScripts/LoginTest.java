@@ -11,7 +11,7 @@ public class LoginTest {
 		driver.get("https://the-internet.herokuapp.com/login");
 		
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("tomsmith");
-		driver.findElement(By.xpath("//input[@type='password' or id='password']")).sendKeys("SuperSecretPassword!");
+		driver.findElement(By.xpath("//input[@type='password' and @id='password']")).sendKeys("SuperSecretPassword!");
 		driver.findElement(By.xpath("//i[@class='fa fa-2x fa-sign-in']")).click();
 	}
 

@@ -24,7 +24,7 @@ public class AlertTest {
 		
 		driver.findElement(By.xpath("(//button[@class='btn btn-default btn-lg'])[2]")).click();
 		Alert alert2 = driver.switchTo().alert();
-		System.out.println(alert1);
+		System.out.println(alert2);
 		alert2.sendKeys("Test Name");
 		alert2.accept();
 	}
